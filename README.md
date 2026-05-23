@@ -1,129 +1,52 @@
-📊 U.S. Median Household Income (2015) — Data Cleaning & Analysis
-📌 Project Overview
-This project analyzes U.S. median household income (2015) by state and city using a dataset from Kaggle. The workflow involves data cleaning, handling missing values, and computing state-level averages and medians.
-The project highlights how missing values affect state-level data quality and provides insights into which states have the highest average and median incomes across their cities.
-
-📂 Dataset
-Source: Kaggle — Median Household Income (2015)
-
-
-File: MedianHouseholdIncome2015.csv
-
-
-Key Columns:
-
-
-Geographic Area → State
-
-
-City → City name
-
-
-Median Income → Median household income
-
-
-
-🛠️ Workflow
-1. Data Loading & Exploration
-Loaded dataset with latin-1 encoding.
-
-
-Inspected sample rows and missing values.
-
-
-2. Data Cleaning
-Converted Median Income to numeric (errors='coerce').
-
-
-Dropped invalid or NaN entries.
-
-
-Verified dataset size before and after cleaning.
-
-
-3. Missing Value Analysis
-Counted records per state before vs. after cleaning.
-
-
-Computed difference (NaN counts) and percentage of NaNs per state.
-
-
-Visualized:
-
-
-Pie chart → Distribution of NaN values across states.
-
-
-Bar chart → Top 10 states with the highest missing value counts.
-
-
-Bar chart → Top 10 states with the highest percentage of missing values.
-
-
-4. State-Level Income Statistics
-Grouped data by Geographic Area (state).
-
-
-Computed:
-
-
-Average city income per state.
-
-
-Median city income per state.
-
-
-Number of cities represented per state.
-
-
-Visualized:
-
-
-Top 10 states by average income.
-
-
-Top 10 states by median income.
-
-
-
-📊 Key Insights
-Missing Data: 5,811 entries (~6.6%) had missing income values.
-
-
-NaN Distribution: Missing values were unevenly distributed, with some states losing more city-level data than others.
-
-
-High-Income States: Both average and median income analyses identified the states with the wealthiest cities (e.g., states with higher living costs such as California and New York).
-
-
-Median vs. Average: Using both statistics allowed for a more robust comparison, since averages can be skewed by outliers.
-
-
-
-📦 Tools & Libraries
-pandas → Data wrangling, grouping, aggregation
-
-
-numpy → Numeric handling
-
-
-matplotlib / seaborn → Visualizations (bar charts, pie charts)
-
-
-scikit-learn (StandardScaler, PCA) → Imported for potential extensions
-
-
-
-🚀 Next Steps
-Apply imputation methods (e.g., mean or regression-based filling) for missing values.
-
-
-Extend analysis to regional comparisons (e.g., Northeast vs. South).
-
-
-Use PCA or clustering to identify income distribution patterns across states.
-
-
-Combine income data with other socio-economic indicators for deeper insights.
-
-
+# U.S. Median Household Income 2015 Analysis
+
+## Overview
+This project cleans and analyzes U.S. median household income data from 2015. It focuses on missing values, city/state-level aggregation, and exploratory summaries of income patterns. The project is an applied data cleaning and EDA exercise.
+
+## Motivation
+Income data is a useful context for practicing careful cleaning, aggregation, and interpretation. This project demonstrates how missing values and geographic grouping choices can affect summary statistics. It also provides a straightforward example of communicating data limitations.
+
+## Dataset
+- **Source:** Kaggle U.S. Median Household Income 2015 dataset.
+- **File:** `data/MedianHouseholdIncome2015.csv`
+- **Target variable:** Not applicable.
+- **Important features:** geographic location fields and median household income values.
+- **Dataset size:** TODO: add dataset size after rerunning notebook.
+- **Known limitations:** The dataset is from 2015 only and does not capture current income levels or changes over time.
+
+## Methods
+- Loaded the household income dataset.
+- Cleaned missing or irregular values.
+- Grouped data by state and city.
+- Computed average and median income summaries.
+- Visualized income distributions and geographic differences.
+
+## Results
+TODO: add metric after rerunning notebook.
+
+## Key Insights
+- Missing values can meaningfully affect state-level summaries.
+- Geographic aggregation choices matter for interpretation.
+- Single-year income data should not be generalized to long-term trends.
+
+## Limitations
+- The dataset covers one year only.
+- The project does not adjust for cost of living or population.
+- Missing values and city coverage may bias state-level comparisons.
+- The analysis is descriptive and does not explain causes of income differences.
+
+## Future Improvements
+- Add population-weighted summaries if population data is available.
+- Compare across multiple years.
+- Add cost-of-living normalization.
+- Save cleaned data and summary tables in `results/`.
+
+## How to Run
+```bash
+git clone https://github.com/BobbY-24/US-Median-Income-2015--Data-Cleaning-and-Analysis.git
+cd US-Median-Income-2015--Data-Cleaning-and-Analysis
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+jupyter notebook notebooks/us_median_income_2015_analysis.ipynb
+```
